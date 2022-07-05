@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KAMI - Indonesian Food Classification</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/2a01a4ff3b.js" crossorigin="anonymous"></script>
+</head>
+<body class="d-flex flex-column min-vh-100 m-0 p-0">
+  <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand text-white" href="/">
+          <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo" class="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/upload">Upload Image</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/about">About Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- Body -->
+    <div class="container">
+      <div class="upload d-flex gap-5 my-5">
+        <img class="intro-img" src="{{ url_for('static', filename='img/makanan.png') }}" alt="makanan">
+        <div>
+          <h1>Klasifikasi Makanan Indonesia</h1>
+          <button>
+            <a class="nav-link text-decoration-none" href="/upload">Upload Gambar</a>
+          </button>
+        </div>
+      </div>
+      <!-- Introduction -->
+      <div class="introduction text-center my-5">
+        
+        <h2>Tentang KAMI</h2>
+        <p>KAMI merupakan aplikasi yang menggunakan kecerdasan buatan (AI) sederhana dengan konsep Deep Learning yang dapat mempelajari gambar yang pengguna masukkan baik melalui galeri, maupun kamera smartphone, dan memberikan output berupa nama makanan, bahan dan cara membuatnya, serta jumlah kandungan gizi yang ada dalam makanan tersebut.</p>
+      </div>
+
+      <!-- Usage -->
+      <div class="usage d-flex flex-column my-5">
+        <h2 class="text-center d-inline">Cara Penggunaan Aplikasi</h2>
+        <img class="usage-img" src="{{ url_for('static', filename='img/alur.png') }}" alt="alur">
+      </div>
+
+      <!-- Testimony -->
+      <div class="testimony d-flex flex-column justify-content-center my-5">
+        <h2 class="text-center">Testimoni</h2>
+        <div id="carouselExampleInterval" class="carousel carousel-dark slide mx-auto" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="3000">
+              <div class="card w-100" style="width: 17rem; height: 12rem">
+                <div class="card-body">
+                  <h5 class="card-title">Rudi</h5>
+                  <p class="card-text">
+                    Aplikasi yang mantap, dengan adanya aplikasi ini saya semakin peduli dengan apa yang saya makan, berapa jumlah kalori saya tiap harinya, dan mengajarkan pola makan sehat.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+              <div class="card w-100" style="width: 17rem; height: 12rem">
+                <div class="card-body">
+                  <h5 class="card-title">Agus</h5>
+                    <p class="card-text">Keren aplikasinya, cepat dan responsif sekali, sangat bermanfaat bagi hidup saya.</p>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+              <div class="card w-100" style="width: 17rem; height: 12rem">
+                <div class="card-body">
+                  <h5 class="card-title">Salim</h5>
+                    <p class="card-text">Dengan menggunakan aplikasi ini, akhirnya saya bisa mengukur berapa jumlah kalori yang telah saya makan tiap harinya, mantap banget!!</p>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+              <div class="card w-100" style="width: 17rem; height: 12rem">
+                <div class="card-body">
+                  <h5 class="card-title">Darminten</h5>
+                    <p class="card-text p-0-5 m-0">Dengan aplikasi ini, suami jadi makin sayang, karena panduan bahan dan cara memasaknya lengkap sekali, good job.</p>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+              <div class="card w-100" style="width: 17rem; height: 12rem">
+                <div class="card-body">
+                  <h5 class="card-title">Siska</h5>
+                    <p class="card-text">Makanan yang ditampilkan cukup lengkap dan informatif, banyak yang bisa saya dapatkan, resepnya juga enak dan mantap!!</p>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-auto pt-3">
+      <div class="container">
+        <div class="d-flex">
+          <div class="address me-5">
+            <h3>Alamat</h3>
+            <p>Institut Teknologi Sepuluh Nopember, Kampus Jl. Raya ITS, Keputih, Sukolilo, Surabaya City, East Java 60111</p>
+          </div>
+          <div class="contact d-flex flex-column">
+            <h3>Contact</h3>
+            <div class="d-flex gap-3">
+              <li class="footer-list linkedin">
+                <a href="https://www.linkedin.com/in/rafidenandra/" class="text-white">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+              </li>
+              <li class="footer-list github">
+                <a href="https://github.com/rafidenandra" class="text-white">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </li>
+              <li class="footer-list ig">
+                <a href="https://www.instagram.com/rafide_/" class="text-white">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </li>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p>© Copyright by KAMI (Klasifikasi Aneka Makanan Indonesia). All Rights Reserved</p>
+        </div>
+      </div>
+    </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>

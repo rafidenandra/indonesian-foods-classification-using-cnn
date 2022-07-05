@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KAMI - Indonesian Food Classification | About</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/2a01a4ff3b.js" crossorigin="anonymous"></script>
+</head>
+<body class="d-flex flex-column min-vh-100 m-0 p-0">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand text-white" href="/">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo" class="logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/upload">Upload Image</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/about">About Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- KAMI Section -->
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-6 d-flex flex-column p-3">
+        <h2>Apa itu KAMI?</h2>
+        <p>
+          KAMI (Klasifikasi Aneka Makanan Indonesia) merupakan project yang dibuat dalam rangka pemenuhan tugas akhir (Final Project) dari program MBKM Artificial Intelligence Mastery di Orbit Future Academy. Project ini menggunakan konsep Machine Learning dalam bidang Computer Vision. KAMI dapat mengolah informasi citra berupa makanan khas Indonesia menjadi dalam bentuk teks, yang berisi bahan dan cara untuk membuat makanan tersebut serta berisi informasi gizi yang terkandung didalamnya.
+        </p>
+      </div>
+      <div class="col-md-6 d-flex flex-column p-3">
+        <h2>Harapan KAMI</h2>
+        <p>
+          Diharapkan dengan adanya KAMI dapat menyelesaikan permasalahan SDG (Sustainable Development Goals) ketiga, mengenai good health and well being serta SGD ke-12 mengenai Responsible Consumption and Production. Karena dengan adanya aplikasi ini diharapkan masyarakat dapat lebih aware mengenai apa yang mereka konsumsi, apakah makanan tersebut bergizi, dan bagaimana kondisi pola makan sehari-hari mereka.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 d-flex flex-column p-3">
+        <h2>Visi</h2>
+        <p>
+          Memperkenalkan makanan khas Indonesia dan meningkatkan kesadaran akan pola makan sehat dengan bantuan teknologi sehingga tercapainya masyarakat yang semakin sehat dan produktif.
+        </p>
+      </div>
+      <div class="col-md-6 d-flex flex-column p-3">
+        <h2>Misi</h2>
+        <ol>
+          <li>Menyediakan platform yang gratis, sederhana dan mudah digunakan oleh semua kalangan.</li>
+          <li>Memberikan solusi integrasi sistem yang inovatif dan berorientasi kepada penggunaan teknologi untuk mengedukasi masyarakat mengenai apa yang mereka konsumsi.</li>
+          <li>Meningkatkan kepedulian dan tanggung jawab terhadap lingkungan dan sosial.</li>
+          <li>Menurunkan risiko obesitas dan penyakit akibat salah pola makan lainnya pada masyarakat Indonesia.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="profile my-5">
+      <h2 class="text-center mb-5">Founder KAMI</h2>
+      <div class="parent">
+        <div class="card profile-card">
+          <img class="profile-pic card-img-top" src="{{ url_for('static', filename='img/Putri Amanda.jpeg') }}" alt="Putri">
+          <div class="card-body">
+            <h5 class="card-title mb-4">Putri Amanda</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Pendidikan Matematika, IKIP PGRI Pontianak, 2019</h6>
+            <p class="card-text">Pesan: Belajar dari hari kemarin, hidup untuk hari ini, berharap untuk besok.</p>
+            <div class="d-flex gap-3">
+              <li class="footer-list linkedin">
+                <a href="https://www.linkedin.com/in/rafidenandra/" class="text-dark">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+              </li>
+              <li class="footer-list ig">
+                <a href="https://www.instagram.com/_putri.amanda/" class="text-dark">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </li>
+            </div>
+          </div>
+        </div>
+
+        <div class="card profile-card">
+          <img class="profile-pic card-img-top" src="{{ url_for('static', filename='img/Johnivan Aldo Sudiono.jpg') }}" alt="Johnivan">
+          <div class="card-body">
+            <h5 class="card-title mb-4">Johnivan Aldo Sudiono</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Teknik Informatika, Institut Teknologi Sepuluh Nopember, 2019</h6>
+            <p class="card-text">Pesan: Segala sesuatu membutuhkan proses, dan segala proses membutuhkan sesuatu yang harus dikorbankan.</p>
+            <div class="d-flex gap-3">
+              <li class="footer-list linkedin">
+                <a href="https://www.linkedin.com/in/johnivan-aldo-12117a132" class="text-dark">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+              </li>
+              <li class="footer-list github">
+                <a href="https://github.com/johnivanaldo" class="text-dark">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </li>
+              <li class="footer-list ig">
+                <a href="https://www.instagram.com/johnivanaldo/" class="text-dark">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </li>
+            </div>
+          </div>
+        </div>
+
+        <div class="card profile-card">
+          <img class="profile-pic card-img-top" src="{{ url_for('static', filename='img/Rafi Denandra.jpg') }}" alt="Rafi">
+          <div class="card-body">
+            <h5 class="card-title mb-4">Rafi Denandra</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Teknik Informatika, Politeknik Elektronika Negeri Surabaya, 2019</h6>
+            <p class="card-text">Pesan: Bermimpilah setinggi langit, jika kamu jatuh, kamu masih jatuh diantara bintang-bintang</p>
+            <div class="d-flex gap-3">
+              <li class="footer-list linkedin">
+                <a href="https://www.linkedin.com/in/rafidenandra/" class="text-dark">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+              </li>
+              <li class="footer-list github">
+                <a href="https://github.com/rafidenandra" class="text-dark">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </li>
+              <li class="footer-list ig">
+                <a href="https://www.instagram.com/rafide_/" class="text-dark">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </li>
+            </div>
+          </div>
+        </div>
+
+        <div class="card profile-card">
+          <img class="profile-pic card-img-top" src="{{ url_for('static', filename='img/Rico Senjaya.jpeg') }}" alt="Rico">
+          <div class="card-body">
+            <h5 class="card-title mb-4">Rico Senjaya</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Teknik Informatika, Universitas Singaperbangsa Karawang, 2019</h6>
+            <p class="card-text">Pesan: Jika kamu tidak sanggup menahan lelahnya BELAJAR, maka kamu harus sanggup menahan perihnya KEBODOHAN.</p>
+            <div class="d-flex gap-3">
+              <li class="footer-list linkedin">
+                <a href="https://www.linkedin.com/in/rico-senjaya-898960155/" class="text-dark">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+              </li>
+              <li class="footer-list ig">
+                <a href="https://www.instagram.com/ricosen_/" class="text-dark">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </li>
+            </div>
+          </div>
+        </div>
+
+        <div class="card profile-card">
+          <img class="profile-pic card-img-top" src="{{ url_for('static', filename='img/Rizka Andhika Mulya Sejati.jpg') }}" alt="Rizka">
+          <div class="card-body">
+            <h5 class="card-title mb-4">Rizka Andhika Mulya Sejati</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Sistem Informasi, Universitas Merdeka Malang, 2019</h6>
+            <p class="card-text">Pesan: Pekerjaan seberat apapun akan terasa ringan apabila tidak dikerjakan.</p>
+            <div class="d-flex gap-3">
+              <li class="footer-list linkedin">
+                <a href="https://www.linkedin.com/in/rizka-andhika-53a31723b/" class="text-dark">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+              </li>
+              <li class="footer-list github">
+                <a href="https://github.com/yoshias12" class="text-dark">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </li>
+              <li class="footer-list ig">
+                <a href="https://www.instagram.com/andhika_rains/" class="text-dark">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-auto pt-3">
+    <div class="container">
+      <div class="d-flex">
+        <div class="address me-5">
+          <h3>Alamat</h3>
+          <p>Institut Teknologi Sepuluh Nopember, Kampus Jl. Raya ITS, Keputih, Sukolilo, Surabaya City, East Java 60111</p>
+        </div>
+        <div class="contact d-flex flex-column">
+          <h3>Contact</h3>
+          <div class="d-flex gap-3">
+            <li class="footer-list linkedin">
+              <a href="https://www.linkedin.com/in/rafidenandra/" class="text-white">
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+            </li>
+            <li class="footer-list github">
+              <a href="https://github.com/rafidenandra" class="text-white">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </li>
+            <li class="footer-list ig">
+              <a href="https://www.instagram.com/rafide_/" class="text-white">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </li>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p>© Copyright by KAMI (Klasifikasi Aneka Makanan Indonesia). All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #F5FCDB !important;
+  color: rgb(71, 71, 71) !important;
+}
+
+.navbar, footer {
+  background-color: #2ECC71;
+  color: white;
+}
+
+.nav-link {
+  border: none;
+  border-radius: 4px !important;
+}
+
+.nav-link:hover {
+  background-color: #2eb968;
+}
+
+.logo {
+  width: 40px;
+}
+
+button {
+  background-color: #2ECC71;
+  color: white;
+  border: none;
+  border-radius: 4px !important;
+  padding: 0.5em;
+}
+
+button:hover {
+  background-color: #2eb968;
+}
+
+.usage-img {
+  width: 350px;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+}
+
+.intro-img {
+  width: 200px;
+}
+
+a, .footer-list {
+  text-decoration: none;
+  list-style: none;
+}
+
+.profile-pic {
+  width: 150px;
+}
+
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  gap: 3rem;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.parent::after {
+  content: "";
+  width: 30%;
+  height: 0;
+}
+
+.profile-card {
+  flex-basis: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-preview, #imagePreview {
+  width: 100%;
+  min-height: 100%;
+  border: 1px dashed #2eb968;
+  border-radius: 4px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* .image-preview__image {
+  max-height: 100px;
+} */
+
+.table {
+  color: rgb(71, 71, 71) !important;
+}
+
+@media only screen and (max-width : 1024px) {
+  /* for tablet */
+  .parent::after {
+    width: 46%;
+  }
+  .profile-card {
+    flex-basis: 46%;
+  }
+}
+
+@media only screen and (max-width : 768px) {
+  /* for mobile */
+  .parent::after {
+    display: none;
+  }
+  .profile-card {
+    flex-basis: 100%;
+  }
+}

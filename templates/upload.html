@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KAMI - Indonesian Food Classification | Upload</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/2a01a4ff3b.js" crossorigin="anonymous"></script>
+</head>
+<body class="d-flex flex-column min-vh-100 m-0 p-0">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand text-white" href="/">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo" class="logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/upload">Upload Image</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/about">About Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Upload Section -->
+  <div class="container my-5">
+    <!-- Form -->
+    <form method="post" action="" enctype='multipart/form-data'>
+      <div class="mb-3">
+        <label for="inpFile" class="form-label">Upload gambar makanan</label>
+        <input class="form-control" type="file" id="inpFile" name="inpFile" accept="image/*" onchange="readURL(this);">
+      </div>
+      <div class="image-preview" id="imagePreview">
+        <img src="" alt="Image Preview" class="image-preview__image" style="display: none; width: 50%;">
+        <span class="image-preview__default-text">Image Preview</span>
+      </div>
+      <button type="submit">Prediksi</button>
+    </form>
+
+    <!-- Result -->
+    {% if result is defined %}
+    <div class="my-5">
+      <!-- Prediksi -->
+      <h2 class="mb-4">Hasil Prediksi: {{ result['class1'] }}</h2>
+      <!-- Tabel -->
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Ranking</th>
+            <th scope="col">Class Label</th>
+            <th scope="col">Probabilitas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1st</td>
+            <td>{{ result['class1'] }}</td>
+            <td>{{ result['prob1'] }} %</td>
+          </tr>
+          <tr>
+            <td>2nd</td>
+            <td>{{ result['class2'] }}</td>
+            <td>{{ result['prob2'] }} %</td>
+          </tr>
+          <tr>
+            <td>3rd</td>
+            <td>{{ result['class3'] }}</td>
+            <td>{{ result['prob3'] }} %</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Resep dan Informasi Gizi -->
+      <div class="row my-5">
+        <div class="col">
+          <h3>Resep Masakan:</h3>
+          <ol>
+            {% for i in recipe %}
+            <li>
+                {{ i }}
+            </li>
+            {% endfor %}
+          </ol>
+        </div>
+        <div class="col">
+          <h3>Cara Memasak:</h3>
+          <ol>
+            {% for i in steps %}
+            <li>
+                {{ i }}
+            </li>
+            {% endfor %}
+          </ol>
+        </div>
+        <div class="col">
+          <h3>Nutrisi:</h3>
+          <ol>
+            {% for i in nutrition %}
+            <li>{{ i }}</li>
+            {% endfor %}
+          </ol>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-auto pt-3">
+    <div class="container">
+      <div class="d-flex">
+        <div class="address me-5">
+          <h3>Alamat</h3>
+          <p>Institut Teknologi Sepuluh Nopember, Kampus Jl. Raya ITS, Keputih, Sukolilo, Surabaya City, East Java 60111</p>
+        </div>
+        <div class="contact d-flex flex-column">
+          <h3>Contact</h3>
+          <div class="d-flex gap-3">
+            <li class="footer-list linkedin">
+              <a href="https://www.linkedin.com/in/rafidenandra/" class="text-white">
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+            </li>
+            <li class="footer-list github">
+              <a href="https://github.com/rafidenandra" class="text-white">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </li>
+            <li class="footer-list ig">
+              <a href="https://www.instagram.com/rafide_/" class="text-white">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </li>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p>© Copyright by KAMI (Klasifikasi Aneka Makanan Indonesia). All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const inpFile = document.getElementById('inpFile');
+    const previewContainer = document.getElementById('imagePreview');
+    const previewImage = previewContainer.querySelector('.image-preview__image');
+    const previewDefaultText = previewContainer.querySelector('.image-preview__default-text');
+
+    inpFile.addEventListener('change', function() {
+      const file = this.files[0];
+
+      if (file) {
+        const reader = new FileReader();
+
+        previewDefaultText.style.display = 'none';
+        previewImage.style.display = 'block';
+
+        reader.addEventListener('load', function() {
+          console.log(this);
+          previewImage.setAttribute('src', this.result);
+        })
+
+        reader.readAsDataURL(file);
+      } else {
+        previewDefaultText.style.display = null;
+        previewImage.style.display = null;
+        previewImage.setAttribute('src', '');
+      }
+    })
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
