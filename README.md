@@ -1,6 +1,6 @@
 # Indonesian Foods Classification App using CNN
 
-> DISCLAIMER: this project is still in progress.
+> DISCLAIMER: this project is not deployed yet.
 
 ## How to run this app
 > NOTE: to run this project, please use anaconda app.
